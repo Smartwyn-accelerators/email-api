@@ -1,0 +1,26 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+     
+     
+   <!--  Email tables -->
+    <changeSet author="fastCode, Inc" id="email-tracking">
+        <createTable tableName="email_tracking">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="email_tracking_pkey"/>
+            </column>
+            <column name="body" type="TEXT"/>
+            <column name="subject" type="VARCHAR(255)"/>
+            <column name="to_" type="VARCHAR(256)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_click" type="BOOLEAN"/>
+            <column name="is_open" type="BOOLEAN"/>
+            <column name="sent_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="versiono" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+
+
+
+</databaseChangeLog>
